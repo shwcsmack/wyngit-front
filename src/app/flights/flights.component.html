@@ -1,0 +1,36 @@
+<div *ngIf="selectedFlight">
+  <h2>
+    {{ selectedFlight.arrivalAirport }} -
+    {{ selectedFlight.departureAirport }} Information
+  </h2>
+  <div><span>id: </span>{{ selectedFlight.id }}</div>
+  <div>
+    <label
+      >Departure Airport:
+      <input
+        [(ngModel)]="selectedFlight.departureAirport"
+        placeholder="departure airport"
+      />
+    </label>
+  </div>
+  <div>
+    <label
+      >Arrival Airport:
+      <input
+        [(ngModel)]="selectedFlight.arrivalAirport"
+        placeholder="arrival airport"
+      />
+    </label>
+  </div>
+</div>
+
+<h2>Flight List</h2>
+<ul class="flights">
+  <li
+    *ngFor="let flight of flights"
+    (click)="onSelect(flight)"
+    [class.selected]="flight === selectedFlight"
+  >
+    {{ flight.arrivalAirport }} - {{ flight.departureAirport }}
+  </li>
+</ul>
