@@ -21,9 +21,10 @@ import {
 } from "@angular/material";
 import { FormsModule } from "@angular/forms";
 import { FlightsComponent } from "./flights/flights.component";
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
-  declarations: [AppComponent, MyNavComponent, FlightsComponent],
+  declarations: [AppComponent, MyNavComponent, FlightsComponent, MessagesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
