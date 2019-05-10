@@ -1,26 +1,29 @@
 import { Component, OnInit } from "@angular/core";
 import { Flight } from "./flight.model";
-import { FLIGHTS } from "./flights.mock";
+import { FlightService } from "./flight.service";
 
 @Component({
   selector: "app-flights",
   templateUrl: "./flights.component.html",
-  styleUrls: ["./flights.component.css"]
+  styleUrls: ["./flights.component.css"],
 })
 export class FlightsComponent implements OnInit {
-  flight: Flight = {
-    id: 1,
-    departureAirport: "KMSP",
-    arrivalAirport: "KLAX"
-  };
-  flights: Flight[] = FLIGHTS;
+  flights: Flight[];
 
-  constructor() {}
+  constructor(private flightService: FlightService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getFlights();
+  }
 
   selectedFlight: Flight;
   onSelect(flight: Flight) {
     this.selectedFlight = flight;
+  }
+
+  getFlights(): void {
+    this.flightService
+      .getFlights()
+      .subscribe(flights => (this.flights = flights));
   }
 }

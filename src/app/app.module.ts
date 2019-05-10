@@ -17,13 +17,20 @@ import {
   MatMenuModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule,
 } from "@angular/material";
 import { FormsModule } from "@angular/forms";
 import { FlightsComponent } from "./flights/flights.component";
+import { MessagesComponent } from "./messages/messages.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
-  declarations: [AppComponent, MyNavComponent, FlightsComponent],
+  declarations: [
+    AppComponent,
+    MyNavComponent,
+    FlightsComponent,
+    MessagesComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -40,9 +47,10 @@ import { FlightsComponent } from "./flights/flights.component";
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
