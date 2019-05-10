@@ -1,5 +1,10 @@
 export class Flight {
-  id: number;
-  departureAirport: string;
-  arrivalAirport: string;
+  _id: number;
+  departureLocation: string;
+  arrivalLocation: string;
+  departureTime: string;
+  arrivalTime: string;
+  aircraft: string;
+  operator: string;
+  createdBy: string;
 }
